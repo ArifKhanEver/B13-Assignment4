@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Job Application Tracker</title>
+
+    <style>
+        * {
+            font-family: "Geist", sans-serif;
+        }
+    </style>
+</head>
+
+<body class="w-[80%] mx-auto bg-[#F1F2F4]">
+    
+    <header class="pt-14">
+        <h1 class="text-[#002C5C] text-[26px] lg:text-[32px] font-bold mb-[20px]">
+            Job Application Tracker
+        </h1>
+
+        <div class="jobCounts grid grid-cols-3 gap-2 lg:gap-4">
+            <div class="totalJobs bg-white p-5 rounded-[8px]">
+                <h5 class="text-[14px] font-medium">Total</h5>
+                <p class="totalCount text-2xl font-bold text-[#002C5C]">0</p>
+            </div>
+            <div class="interviewJobs bg-white p-5 rounded-[8px]">
+                <h5 class="text-[14px] font-medium">Interview</h5>
+                <p class="interviewCount text-2xl font-bold text-[#10B981]">0</p>
+            </div>
+            <div class="rejectedJobs bg-white p-5 rounded-[8px]">
+                <h5 class="text-[14px] font-medium">Rejected</h5>
+                <p class="rejectedCount text-2xl font-bold text-[#EF4444]">0</p>
+            </div>
+        </div>
+    </header>
+
+    <hr class="border-[#c9c9c9] my-7">
+    
+    <main>
+        <h2 class="text-[20px] font-semibold text-[#002C5C] mb-6">Available Jobs</h2>
+
+        <div class="toggleButtons">
+            <button class="buttonAll w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-white bg-[#3B82F6]">All</button>
+            <button class="buttonInterview w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-[#64748B] bg-white">Interview</button>
+            <button class="buttonRejected w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-[#64748B] bg-white">Rejected</button>
+        </div>
+
+    </main>
+</body>
+</html>
