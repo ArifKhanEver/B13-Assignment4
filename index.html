@@ -42,14 +42,62 @@
     <hr class="border-[#c9c9c9] my-7">
     
     <main>
-        <h2 class="text-[20px] font-semibold text-[#002C5C] mb-6">Available Jobs</h2>
-
-        <div class="toggleButtons">
-            <button class="buttonAll w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-white bg-[#3B82F6]">All</button>
-            <button class="buttonInterview w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-[#64748B] bg-white">Interview</button>
-            <button class="buttonRejected w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-[#64748B] bg-white">Rejected</button>
+        <div class="contentHeading flex justify-between">
+            <h2 class="text-[20px] font-semibold text-[#002C5C] mb-6">Available Jobs</h2>
+            <h5 class="mx-1 font-medium text-[#64748B]">0 jobs</h5>
         </div>
 
+        <div class="toggleButtons mb-4">
+            <button id="buttonAll" class="w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-white bg-[#3B82F6] hover:text-white hover:bg-[#3B82F6]">All</button>
+            <button id="buttonInterview" class="w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-[#64748B] bg-white hover:text-white hover:bg-[#3B82F6]">Interview</button>
+            <button id="buttonRejected" class="w-[80px] mr-2 rounded-[4px] text-[12px] font-semibold py-[10px] text-[#64748B] bg-white hover:text-white hover:bg-[#3B82F6]">Rejected</button>
+        </div>
+
+
+        <section id="allJobs">
+            <div id="noJobsAll" class="h-[400px] px-10 py-14 bg-white rounded-[8px] grid place-content-center justify-items-center">
+                <img src="./jobs.png" alt="jobs" class="mb-[20px]">
+                <h4 class="text-[#002C5C] text-[24px] font-semibold">No jobs available</h4>
+                <p class="text-[#64748B]">Check back soon for new job opportunities All</p>
+            </div>
+
+            <div class="cards">
+                <div class="card">
+                    <div class="contents">
+
+                    </div>
+                    <div class="delete">
+                        <button><img src="./delete.png" alt="delete icon"></button>
+                    </div>
+                </div>
+            </div>
+
+
+        </section>
+
+
+        <section id="interviewJobs" class="hidden">
+            <div id="noJobsInterview" class="h-[400px] px-10 py-14 bg-white rounded-[8px] grid place-content-center justify-items-center">
+                <img src="./jobs.png" alt="jobs" class="mb-[20px]">
+                <h4 class="text-[#002C5C] text-[24px] font-semibold">No jobs available</h4>
+                <p class="text-[#64748B]">Check back soon for new job opportunities Interview</p>
+            </div>
+
+        </section>
+
+
+        <section id="rejectedJobs" class="hidden">
+            <div id="noJobsRejected" class="h-[400px] px-10 py-14 bg-white rounded-[8px] grid place-content-center justify-items-center">
+                <img src="./jobs.png" alt="jobs" class="mb-[20px]">
+                <h4 class="text-[#002C5C] text-[24px] font-semibold">No jobs available</h4>
+                <p class="text-[#64748B]">Check back soon for new job opportunities Rejected</p>
+            </div>
+
+        </section>
+
     </main>
+
+
+    <script src="script.js"></script>
 </body>
 </html>
