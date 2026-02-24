@@ -26,15 +26,15 @@
         <div class="jobCounts grid grid-cols-3 gap-2 lg:gap-4">
             <div class="totalJobs bg-white p-5 rounded-[8px]">
                 <h5 class="text-[14px] font-medium">Total</h5>
-                <p class="totalCount text-2xl font-bold text-[#002C5C]">0</p>
+                <p id="totalCount" class="text-2xl font-bold text-[#002C5C]">0</p>
             </div>
             <div class="interviewJobs bg-white p-5 rounded-[8px]">
                 <h5 class="text-[14px] font-medium">Interview</h5>
-                <p class="interviewCount text-2xl font-bold text-[#10B981]">0</p>
+                <p id="interviewCount" class="text-2xl font-bold text-[#10B981]">0</p>
             </div>
             <div class="rejectedJobs bg-white p-5 rounded-[8px]">
                 <h5 class="text-[14px] font-medium">Rejected</h5>
-                <p class="rejectedCount text-2xl font-bold text-[#EF4444]">0</p>
+                <p id="rejectedCount" class="text-2xl font-bold text-[#EF4444]">0</p>
             </div>
         </div>
     </header>
@@ -44,7 +44,7 @@
     <main class="py-7">
         <div class="contentHeading flex justify-between">
             <h2 class="text-[20px] font-semibold text-[#002C5C] mb-6">Available Jobs</h2>
-            <h5 class="mx-1 font-medium text-[#64748B]">0 jobs</h5>
+            <h5 class="mx-1 font-medium text-[#64748B]"><span id="subTotalJobsCount">0</span> jobs</h5>
         </div>
 
         <div class="toggleButtons mb-4">
@@ -61,16 +61,16 @@
                 <p class="text-[#64748B]">Check back soon for new job opportunities All</p>
             </div>
 
-            <div class="cards">
+            <div class="allJobsCards">
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
+                            <p class="jobShortDsc text-[#64748B]">React Native Developer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
@@ -81,8 +81,8 @@
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -94,24 +94,24 @@
                 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">WebFlow Agency</h4>
+                            <p class="jobShortDsc text-[#64748B]">Web Designer & Developer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">Los Angeles, CA • Part-time • $80,000 - $120,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -123,24 +123,24 @@
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">DataViz Solutions</h4>
+                            <p class="jobShortDsc text-[#64748B]">Data Visualization Specialist</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">Boston, MA • Full-time • $125,000 - $165,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -152,24 +152,24 @@
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">CloudFirst Inc</h4>
+                            <p class="jobShortDsc text-[#64748B]">Backend Developer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">Seattle, WA • Full-time • $140,000 - $190,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -181,24 +181,24 @@
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">Innovation Labs</h4>
+                            <p class="jobShortDsc text-[#64748B]">UI/UX Engineer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">Austin, TX • Full-time • $110,000 - $150,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -210,24 +210,24 @@
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">MegaCorp Solutions</h4>
+                            <p class="jobShortDsc text-[#64748B]">JavaScript Developer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">New York, NY • Full-time • $130,000 - $170,00</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -239,24 +239,24 @@
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">StartupXYZ</h4>
+                            <p class="jobShortDsc text-[#64748B]">Full Stack Engineer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $120,000 - $160,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -268,24 +268,24 @@
 
                 <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                     <div class="mainContent flex flex-col">
-                        <div class="jobTitles">
-                            <h4 class="text-[18px] text-[#002C5C] font-semibold">Mobile First Crop</h4>
-                            <p class="text-[#64748B]">React Native Developer</p>
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">TechCorp Industries</h4>
+                            <p class="jobShortDsc text-[#64748B]">Senior Frontend Developer</p>
                         </div>
 
-                        <h6 class="my-[20px] text-[#64748B] text-[14px]">Remote • Full-time • $130,000 - $175,000</h6>
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">San Francisco, CA • Full-time • $130,000 - $175,000</h6>
 
                         <div class="mb-2">
                             <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
                         </div>
 
                         <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                            Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.
+                            We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
                         </p>
 
                         <div class="buttons">
-                            <button class="interview uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
-                            <button class="rejected uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
                         </div>
 
                     </div>
@@ -305,7 +305,40 @@
             <div id="noJobsInterview" class="h-[400px] px-10 py-14 bg-white rounded-[8px] grid place-content-center justify-items-center">
                 <img src="./jobs.png" alt="jobs" class="mb-[20px]">
                 <h4 class="text-[#002C5C] text-[24px] font-semibold">No jobs available</h4>
-                <p class="text-[#64748B]">Check back soon for new job opportunities Interview</p>
+                <p class="text-[#64748B] text-center">Check back soon for new job opportunities</p>
+            </div>
+
+            <div class="interviewJobsCards">
+
+                <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
+                    <div class="mainContent flex flex-col">
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">TechCorp Industries</h4>
+                            <p class="jobShortDsc text-[#64748B]">Senior Frontend Developer</p>
+                        </div>
+
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">San Francisco, CA • Full-time • $130,000 - $175,000</h6>
+
+                        <div class="mb-2">
+                            <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
+                        </div>
+
+                        <p class="jobDescription text-[14px] text-[#323B49] mb-5">
+                            We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+                        </p>
+
+                        <div class="buttons">
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <div class="delete max-[650px]:w-[65px]">
+                        <button><img src="./delete.png" alt="delete icon"></button>
+                    </div>
+                </div>
+
             </div>
 
         </section>
@@ -315,7 +348,41 @@
             <div id="noJobsRejected" class="h-[400px] px-10 py-14 bg-white rounded-[8px] grid place-content-center justify-items-center">
                 <img src="./jobs.png" alt="jobs" class="mb-[20px]">
                 <h4 class="text-[#002C5C] text-[24px] font-semibold">No jobs available</h4>
-                <p class="text-[#64748B]">Check back soon for new job opportunities Rejected</p>
+                <p class="text-[#64748B] text-center">Check back soon for new job opportunities</p>
+            </div>
+
+
+            <div class="rejectedJobsCards">
+                
+                <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
+                    <div class="mainContent flex flex-col">
+                        <div>
+                            <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">TechCorp Industries</h4>
+                            <p class="jobShortDsc text-[#64748B]">Senior Frontend Developer</p>
+                        </div>
+
+                        <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">San Francisco, CA • Full-time • $130,000 - $175,000</h6>
+
+                        <div class="mb-2">
+                            <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
+                        </div>
+
+                        <p class="jobDescription text-[14px] text-[#323B49] mb-5">
+                            We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+                        </p>
+
+                        <div class="buttons">
+                            <button class="interviewButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#10B981] text-[#10B981] mr-2">Interview</button>
+                            <button class="rejectedButton uppercase text-[14px] font-semibold px-[12px] py-[8px] border border-2 rounded-[4px] border-[#EF4444] text-[#EF4444]">Rejected</button>
+                        </div>
+
+                    </div>
+
+                    <div class="delete max-[650px]:w-[65px]">
+                        <button><img src="./delete.png" alt="delete icon"></button>
+                    </div>
+                </div>
+
             </div>
 
         </section>
