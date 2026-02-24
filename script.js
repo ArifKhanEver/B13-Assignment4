@@ -122,6 +122,9 @@ mainContainer.addEventListener('click',function(event) {
         })
     }
 
+
+
+
     function displayNoJobs() {
         document.getElementById('subTotalJobsCount').innerText = cards.length;
         totalCount.innerText = cards.length;
