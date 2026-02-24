@@ -93,45 +93,6 @@ buttonRejected.addEventListener('click', function(){
 
 
 
-// delete button implementation
-const deleteBtn = document.querySelectorAll('.delete');
-console.log(deleteBtn)
-
-for (let i = 0; i < deleteBtn.length; i++) {
-    deleteBtn[i].addEventListener('click', function(event) {
-        event.target.parentNode.parentNode.parentNode.remove();
-
-        updateTotalCount();
-    })
-}
-
-function updateTotalCount() {
-    document.getElementById('subTotalJobsCount').innerText = cards.length;
-    totalCount.innerText = cards.length;
-
-    if(cards.length == 0) {
-        noJobsAll.classList.remove('hidden');
-    }else {
-        noJobsAll.classList.add('hidden');
-    }
-
-
-    if(interviewJobsCards.length == 0) {
-        noJobsInterview.classList.remove('hidden');
-    }else {
-        noJobsInterview.classList.add('hidden');
-    }
-
-
-    if(rejectedJobsCards.length == 0) {
-        noJobsRejected.classList.remove('hidden');
-    }else {
-        noJobsRejected.classList.add('hidden');
-    }
-
-}
-
-
 // Playing with Cards
 
 let interviewList = [];
@@ -140,6 +101,55 @@ let rejectedList = [];
 const mainContainer = document.querySelector('main');
 
 mainContainer.addEventListener('click',function(event) {
+
+
+    // delete button implementation
+    const deleteBtn = document.querySelectorAll('.delete');
+    
+    for (let i = 0; i < deleteBtn.length; i++) {
+        deleteBtn[i].addEventListener('click', function(event) {
+            
+            const titleToRemove =event.target.parentNode.parentNode.parentNode.querySelector('.jobTitle').innerText;
+            interviewList = interviewList.filter(job => job.jobTitle !== titleToRemove);
+            rejectedList = rejectedList.filter(job => job.jobTitle !== titleToRemove);
+            
+            event.target.parentNode.parentNode.parentNode.remove();
+
+            interviewCount.innerText = interviewList.length;
+            rejectedCount.innerText = rejectedList.length;
+
+            displayNoJobs();
+        })
+    }
+
+    function displayNoJobs() {
+        document.getElementById('subTotalJobsCount').innerText = cards.length;
+        totalCount.innerText = cards.length;
+
+        if(cards.length == 0) {
+            noJobsAll.classList.remove('hidden');
+        }else {
+            noJobsAll.classList.add('hidden');
+        }
+
+
+        if(interviewJobsCards.length == 0) {
+            noJobsInterview.classList.remove('hidden');
+        }else {
+            noJobsInterview.classList.add('hidden');
+        }
+
+
+        if(rejectedJobsCards.length == 0) {
+            noJobsRejected.classList.remove('hidden');
+        }else {
+            noJobsRejected.classList.add('hidden');
+        }
+
+    }
+
+
+    // Objects Listening
 
     const isInterview = event.target.classList.contains('interviewButton');
     const isRejected = event.target.classList.contains('rejectedButton');
@@ -173,7 +183,7 @@ mainContainer.addEventListener('click',function(event) {
 
             if(foundInInterview === false) {
                 interviewList.push(jobData);
-                jobStatus.innerText = "Interviewed";
+                jobStatus.innerText = "Interview";
 
             }
             
@@ -238,17 +248,17 @@ function renderInterviewed() {
                 <div class="mainContent flex flex-col">
                     <div>
                         <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">${interview.jobTitle}</h4>
-                        <p class="jobShortDsc text-[#64748B]">Senior Frontend Developer</p>
+                        <p class="jobShortDsc text-[#64748B]">${interview.jobShortDsc}</p>
                     </div>
 
-                    <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">San Francisco, CA • Full-time • $130,000 - $175,000</h6>
+                    <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">${interview.jobSalary}</h6>
 
                     <div class="mb-2">
-                        <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
+                        <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Interview</button>
                     </div>
 
                     <p class="jobDescription text-[14px] text-[#323B49] mb-5">
-                        We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+                        ${interview.jobDescription}
                     </p>
 
                     <div class="buttons">
@@ -278,21 +288,21 @@ function renderRejected() {
         // let div = document.createElement('div');
 
         div1.innerHTML += `
-         <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
+            <div class="card flex justify-between p-6 bg-white mt-4 rounded-[8px]">
                 <div class="mainContent flex flex-col">
                     <div>
                         <h4 class="jobTitle text-[18px] text-[#002C5C] font-semibold">${rejected.jobTitle}</h4>
                         <p class="jobShortDsc text-[#64748B]">${rejected.jobShortDsc}</p>
                     </div>
 
-                    <h6 class="${rejected.jobSalary} my-[20px] text-[#64748B] text-[14px]">San Francisco, CA • Full-time • $130,000 - $175,000</h6>
+                    <h6 class="jobSalary my-[20px] text-[#64748B] text-[14px]">${rejected.jobSalary}</h6>
 
                     <div class="mb-2">
-                        <button class="${rejected.jobStatus} uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Not Applied</button>
+                        <button class="jobStatus uppercase text-left px-3 py-2 bg-[#EEF4FF] rounded-[4px]">Rejected</button>
                     </div>
 
-                    <p class="${rejected.jobShortDsc} text-[14px] text-[#323B49] mb-5">
-                        We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+                    <p class="jobDescription text-[14px] text-[#323B49] mb-5">
+                        ${rejected.jobDescription}
                     </p>
 
                     <div class="buttons">
