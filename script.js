@@ -19,7 +19,6 @@ const noJobsRejected = document.getElementById('noJobsRejected');
 const cards = document.querySelector('#allJobsCards').children;
 const interviewJobsCards = document.querySelector('#interviewJobsCards').children;
 const rejectedJobsCards = document.querySelector('#rejectedJobsCards').children;
-console.log(cards)
 
 document.getElementById('subTotalJobsCount').innerText = cards.length;
 totalCount.innerText = cards.length;
@@ -31,18 +30,6 @@ if(cards.length == 0) {
 }else {
     noJobsAll.classList.add('hidden');
 }
-
-// if(interviewJobsCards.length == 0) {
-//     noJobsInterview.classList.remove('hidden');
-// }else {
-//     noJobsInterview.classList.add('hidden');
-// }
-
-// if(rejectedJobsCards.length == 0) {
-//     noJobsRejected.classList.remove('hidden');
-// }else {
-//     noJobsRejected.classList.add('hidden');
-// }
 
 
 // Toggle buttons Implementation
@@ -92,7 +79,6 @@ buttonRejected.addEventListener('click', function(){
 });
 
 
-
 // Playing with Cards
 
 let interviewList = [];
@@ -101,7 +87,6 @@ let rejectedList = [];
 const mainContainer = document.querySelector('main');
 
 mainContainer.addEventListener('click',function(event) {
-
 
     // delete button implementation
     const deleteBtn = document.querySelectorAll('.delete');
@@ -121,8 +106,6 @@ mainContainer.addEventListener('click',function(event) {
             displayNoJobs();
         })
     }
-
-
 
 
     function displayNoJobs() {
@@ -190,7 +173,6 @@ mainContainer.addEventListener('click',function(event) {
 
             }
             
-            console.log(interviewList);
         }
         else if (isRejected) {
             interviewList = interviewList.filter(job => job.jobTitle !== currentJobTitle);
@@ -209,8 +191,6 @@ mainContainer.addEventListener('click',function(event) {
                 jobStatus.innerText = "rejected";
             }
 
-
-            console.log(rejectedList);
         }
         
         renderInterviewed();
